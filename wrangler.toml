@@ -1,0 +1,16 @@
+name = "xian-trip-handbook"
+main = "worker.js"
+compatibility_date = "2025-03-01"
+
+# Account ID 不用写在这里 —— 由 GitHub Secret「CF_ACCOUNT_ID」在部署时自动注入，
+# 这样你只需在 wrangler.toml 里填下面这一处 KV 的 ID，少一个出错点。
+
+# KV 命名空间（Cloudflare 后台先建好，把 id 填进来）
+[[kv_namespaces]]
+binding = "TRIP_KV"
+id = "85ea4fbbc36d4a99afe2d121bc577a99"
+
+# 静态资源目录：单文件 index.html 放在 ./public
+[assets]
+directory = "./public"
+binding = "ASSETS"
